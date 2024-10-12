@@ -1,4 +1,4 @@
-```markdown
+
 # Swiss Hiking Trail Planner
 
 This project involves analyzing Swiss hiking trails using various geospatial data processing techniques. It includes operations such as clipping, proximity checks, polygon generation, and filtering based on specific criteria. The primary goal is to identify and visualize hiking routes in relation to parking areas, ensuring that the selected trails meet user-defined conditions.
