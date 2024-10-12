@@ -15,9 +15,37 @@ import pandas as pd
 from shapely.geometry import Point, Polygon
 import shutil
 
+"""
+Author: David Oesch
+
+Description:
+    This script processes hiking trail data by performing the following steps:
+    1. Clipping Swiss hiking trail data to a specified geographic extent.
+    2. Downloading parking location data from OpenStreetMap within the defined extent.
+    3. Converting point geometries to polygons and merging with existing polygons.
+    4. Extracting LineString geometries from a shapefile and polygonizing them.
+    5. Merging polygons based on proximity and filtering by distance to parking areas.
+    6. Removing polygons that exceed specified length or height criteria.
+    7. Exporting results to GeoPackage and KML formats.
+
+Libraries used:
+    - osgeo: for handling geospatial data formats (OGR and OSR).
+    - shapely: for geometric operations and manipulations.
+    - pyproj: for coordinate transformations.
+    - osmnx: for downloading OpenStreetMap data.
+    - simplekml: for creating KML files.
+    - geopandas: for working with geospatial data using pandas-like syntax.
+    - pandas: for data manipulation and analysis.
+    - json: for working with JSON data formats.
+    - random: for generating random values.
+    - glob: for filename pattern matching.
+    - subprocess: for executing shell commands.
+    - shutil: for file operations.
+"""
+
 #Configure
-extent = ([2698690,1111036],  [2706116,1116231])
-input_shapefile= os.path.join("input","dissolved_wanderwege.shp")
+extent = ([2680955.29, 1130324.57],  [2720469.24, 1107393.94])
+input_shapefile= os.path.join("input","dissolved_wanderwege.gpkg")
 parking_buffer_meter = 500  # Use 500 meters for proximity check
 max_length_meter = 6000  # Define the maximum length in meters
 max_height_meter = 400
