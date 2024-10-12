@@ -3,154 +3,155 @@
     <Document id="169">
         <Style id="172">
             <LineStyle id="173">
-                <color>ffd71789</color>
+                <color>ff928e09</color>
                 <colorMode>normal</colorMode>
                 <width>10</width>
             </LineStyle>
         </Style>
         <Style id="178">
             <LineStyle id="179">
-                <color>ffcd5bfd</color>
+                <color>ff2731e4</color>
                 <colorMode>normal</colorMode>
                 <width>9</width>
             </LineStyle>
         </Style>
         <Style id="184">
             <LineStyle id="185">
-                <color>ff998d40</color>
+                <color>ffc4f049</color>
                 <colorMode>normal</colorMode>
                 <width>9</width>
             </LineStyle>
         </Style>
         <Style id="190">
             <LineStyle id="191">
-                <color>ffb6b9ab</color>
+                <color>ff2cd71d</color>
                 <colorMode>normal</colorMode>
                 <width>8</width>
             </LineStyle>
         </Style>
         <Style id="196">
             <LineStyle id="197">
-                <color>ff779199</color>
+                <color>ffb98480</color>
                 <colorMode>normal</colorMode>
                 <width>8</width>
             </LineStyle>
         </Style>
         <Style id="202">
             <LineStyle id="203">
-                <color>ff715a7c</color>
+                <color>ff441e7e</color>
                 <colorMode>normal</colorMode>
                 <width>7</width>
             </LineStyle>
         </Style>
         <Style id="208">
             <LineStyle id="209">
-                <color>ff38f4d9</color>
+                <color>ff08c4d1</color>
                 <colorMode>normal</colorMode>
                 <width>7</width>
             </LineStyle>
         </Style>
         <Style id="214">
             <LineStyle id="215">
-                <color>ff1624ea</color>
+                <color>ff44be08</color>
                 <colorMode>normal</colorMode>
                 <width>7</width>
             </LineStyle>
         </Style>
         <Style id="220">
             <LineStyle id="221">
-                <color>fffe74dd</color>
+                <color>ff1830f1</color>
                 <colorMode>normal</colorMode>
                 <width>7</width>
             </LineStyle>
         </Style>
         <Style id="226">
             <LineStyle id="227">
-                <color>ff62489d</color>
+                <color>ffe0cc35</color>
                 <colorMode>normal</colorMode>
                 <width>7</width>
             </LineStyle>
         </Style>
         <Style id="232">
             <LineStyle id="233">
-                <color>ff33309e</color>
+                <color>ffc52050</color>
                 <colorMode>normal</colorMode>
                 <width>6</width>
             </LineStyle>
         </Style>
         <Style id="238">
             <LineStyle id="239">
-                <color>ff291130</color>
+                <color>ff796271</color>
                 <colorMode>normal</colorMode>
                 <width>6</width>
             </LineStyle>
         </Style>
         <Style id="244">
             <LineStyle id="245">
-                <color>ff41c2c9</color>
+                <color>ff80b57a</color>
                 <colorMode>normal</colorMode>
                 <width>4</width>
             </LineStyle>
         </Style>
         <Style id="250">
             <LineStyle id="251">
-                <color>ff736393</color>
+                <color>fffb74e0</color>
                 <colorMode>normal</colorMode>
                 <width>4</width>
             </LineStyle>
         </Style>
         <Style id="256">
             <LineStyle id="257">
-                <color>ff28a794</color>
+                <color>ffbecf1d</color>
                 <colorMode>normal</colorMode>
                 <width>4</width>
             </LineStyle>
         </Style>
         <Style id="262">
             <LineStyle id="263">
-                <color>ff6f25b5</color>
+                <color>ff3dc78d</color>
                 <colorMode>normal</colorMode>
                 <width>4</width>
             </LineStyle>
         </Style>
         <Style id="268">
             <LineStyle id="269">
-                <color>ff72db48</color>
+                <color>ffcba386</color>
                 <colorMode>normal</colorMode>
                 <width>4</width>
             </LineStyle>
         </Style>
         <Style id="274">
             <LineStyle id="275">
-                <color>ff21f208</color>
+                <color>ff2e10ce</color>
                 <colorMode>normal</colorMode>
                 <width>3</width>
             </LineStyle>
         </Style>
         <Style id="280">
             <LineStyle id="281">
-                <color>ff935404</color>
+                <color>ff2db5f6</color>
                 <colorMode>normal</colorMode>
                 <width>3</width>
             </LineStyle>
         </Style>
         <Style id="286">
             <LineStyle id="287">
-                <color>ff23dd31</color>
+                <color>ff54c7a8</color>
                 <colorMode>normal</colorMode>
                 <width>2</width>
             </LineStyle>
         </Style>
         <Style id="292">
             <LineStyle id="293">
-                <color>ff43cafe</color>
+                <color>fff5a43d</color>
                 <colorMode>normal</colorMode>
                 <width>2</width>
             </LineStyle>
         </Style>
         <name>400_6000</name>
         <Placemark id="171">
-            <name>Länge:4.4km_Höhe:399m</name>
+            <name>Länge:4.4km Höhe:399m</name>
+            <description>&lt;a href='https://map.geo.admin.ch/#/map?layers=KML|https://raw.githubusercontent.com/davidoesch/hiking_selector/refs/heads/main/result/2145_348.kml'&gt;Wanderung anzeigen&lt;/a&gt;</description>
             <styleUrl>#172</styleUrl>
             <ExtendedData>
                 <Data name="type">
@@ -162,7 +163,8 @@
             </LineString>
         </Placemark>
         <Placemark id="177">
-            <name>Länge:4.4km_Höhe:349m</name>
+            <name>Länge:4.4km Höhe:349m</name>
+            <description>&lt;a href='https://map.geo.admin.ch/#/map?layers=KML|https://raw.githubusercontent.com/davidoesch/hiking_selector/refs/heads/main/result/2145_348.kml'&gt;Wanderung anzeigen&lt;/a&gt;</description>
             <styleUrl>#178</styleUrl>
             <ExtendedData>
                 <Data name="type">
@@ -174,7 +176,8 @@
             </LineString>
         </Placemark>
         <Placemark id="183">
-            <name>Länge:2.1km_Höhe:348m</name>
+            <name>Länge:2.1km Höhe:348m</name>
+            <description>&lt;a href='https://map.geo.admin.ch/#/map?layers=KML|https://raw.githubusercontent.com/davidoesch/hiking_selector/refs/heads/main/result/2145_348.kml'&gt;Wanderung anzeigen&lt;/a&gt;</description>
             <styleUrl>#184</styleUrl>
             <ExtendedData>
                 <Data name="type">
@@ -186,7 +189,8 @@
             </LineString>
         </Placemark>
         <Placemark id="189">
-            <name>Länge:3.3km_Höhe:304m</name>
+            <name>Länge:3.3km Höhe:304m</name>
+            <description>&lt;a href='https://map.geo.admin.ch/#/map?layers=KML|https://raw.githubusercontent.com/davidoesch/hiking_selector/refs/heads/main/result/2145_348.kml'&gt;Wanderung anzeigen&lt;/a&gt;</description>
             <styleUrl>#190</styleUrl>
             <ExtendedData>
                 <Data name="type">
@@ -198,7 +202,8 @@
             </LineString>
         </Placemark>
         <Placemark id="195">
-            <name>Länge:1.8km_Höhe:307m</name>
+            <name>Länge:1.8km Höhe:307m</name>
+            <description>&lt;a href='https://map.geo.admin.ch/#/map?layers=KML|https://raw.githubusercontent.com/davidoesch/hiking_selector/refs/heads/main/result/2145_348.kml'&gt;Wanderung anzeigen&lt;/a&gt;</description>
             <styleUrl>#196</styleUrl>
             <ExtendedData>
                 <Data name="type">
@@ -210,7 +215,8 @@
             </LineString>
         </Placemark>
         <Placemark id="201">
-            <name>Länge:1.8km_Höhe:285m</name>
+            <name>Länge:1.8km Höhe:285m</name>
+            <description>&lt;a href='https://map.geo.admin.ch/#/map?layers=KML|https://raw.githubusercontent.com/davidoesch/hiking_selector/refs/heads/main/result/2145_348.kml'&gt;Wanderung anzeigen&lt;/a&gt;</description>
             <styleUrl>#202</styleUrl>
             <ExtendedData>
                 <Data name="type">
@@ -222,7 +228,8 @@
             </LineString>
         </Placemark>
         <Placemark id="207">
-            <name>Länge:2.6km_Höhe:279m</name>
+            <name>Länge:2.6km Höhe:279m</name>
+            <description>&lt;a href='https://map.geo.admin.ch/#/map?layers=KML|https://raw.githubusercontent.com/davidoesch/hiking_selector/refs/heads/main/result/2145_348.kml'&gt;Wanderung anzeigen&lt;/a&gt;</description>
             <styleUrl>#208</styleUrl>
             <ExtendedData>
                 <Data name="type">
@@ -234,7 +241,8 @@
             </LineString>
         </Placemark>
         <Placemark id="213">
-            <name>Länge:3.2km_Höhe:273m</name>
+            <name>Länge:3.2km Höhe:273m</name>
+            <description>&lt;a href='https://map.geo.admin.ch/#/map?layers=KML|https://raw.githubusercontent.com/davidoesch/hiking_selector/refs/heads/main/result/2145_348.kml'&gt;Wanderung anzeigen&lt;/a&gt;</description>
             <styleUrl>#214</styleUrl>
             <ExtendedData>
                 <Data name="type">
@@ -246,7 +254,8 @@
             </LineString>
         </Placemark>
         <Placemark id="219">
-            <name>Länge:2.5km_Höhe:276m</name>
+            <name>Länge:2.5km Höhe:276m</name>
+            <description>&lt;a href='https://map.geo.admin.ch/#/map?layers=KML|https://raw.githubusercontent.com/davidoesch/hiking_selector/refs/heads/main/result/2145_348.kml'&gt;Wanderung anzeigen&lt;/a&gt;</description>
             <styleUrl>#220</styleUrl>
             <ExtendedData>
                 <Data name="type">
@@ -258,7 +267,8 @@
             </LineString>
         </Placemark>
         <Placemark id="225">
-            <name>Länge:2.8km_Höhe:286m</name>
+            <name>Länge:2.8km Höhe:286m</name>
+            <description>&lt;a href='https://map.geo.admin.ch/#/map?layers=KML|https://raw.githubusercontent.com/davidoesch/hiking_selector/refs/heads/main/result/2145_348.kml'&gt;Wanderung anzeigen&lt;/a&gt;</description>
             <styleUrl>#226</styleUrl>
             <ExtendedData>
                 <Data name="type">
@@ -270,7 +280,8 @@
             </LineString>
         </Placemark>
         <Placemark id="231">
-            <name>Länge:2.6km_Höhe:236m</name>
+            <name>Länge:2.6km Höhe:236m</name>
+            <description>&lt;a href='https://map.geo.admin.ch/#/map?layers=KML|https://raw.githubusercontent.com/davidoesch/hiking_selector/refs/heads/main/result/2145_348.kml'&gt;Wanderung anzeigen&lt;/a&gt;</description>
             <styleUrl>#232</styleUrl>
             <ExtendedData>
                 <Data name="type">
@@ -282,7 +293,8 @@
             </LineString>
         </Placemark>
         <Placemark id="237">
-            <name>Länge:1.9km_Höhe:254m</name>
+            <name>Länge:1.9km Höhe:254m</name>
+            <description>&lt;a href='https://map.geo.admin.ch/#/map?layers=KML|https://raw.githubusercontent.com/davidoesch/hiking_selector/refs/heads/main/result/2145_348.kml'&gt;Wanderung anzeigen&lt;/a&gt;</description>
             <styleUrl>#238</styleUrl>
             <ExtendedData>
                 <Data name="type">
@@ -294,7 +306,8 @@
             </LineString>
         </Placemark>
         <Placemark id="243">
-            <name>Länge:1.8km_Höhe:166m</name>
+            <name>Länge:1.8km Höhe:166m</name>
+            <description>&lt;a href='https://map.geo.admin.ch/#/map?layers=KML|https://raw.githubusercontent.com/davidoesch/hiking_selector/refs/heads/main/result/2145_348.kml'&gt;Wanderung anzeigen&lt;/a&gt;</description>
             <styleUrl>#244</styleUrl>
             <ExtendedData>
                 <Data name="type">
@@ -306,7 +319,8 @@
             </LineString>
         </Placemark>
         <Placemark id="249">
-            <name>Länge:1.7km_Höhe:152m</name>
+            <name>Länge:1.7km Höhe:152m</name>
+            <description>&lt;a href='https://map.geo.admin.ch/#/map?layers=KML|https://raw.githubusercontent.com/davidoesch/hiking_selector/refs/heads/main/result/2145_348.kml'&gt;Wanderung anzeigen&lt;/a&gt;</description>
             <styleUrl>#250</styleUrl>
             <ExtendedData>
                 <Data name="type">
@@ -318,7 +332,8 @@
             </LineString>
         </Placemark>
         <Placemark id="255">
-            <name>Länge:1.4km_Höhe:150m</name>
+            <name>Länge:1.4km Höhe:150m</name>
+            <description>&lt;a href='https://map.geo.admin.ch/#/map?layers=KML|https://raw.githubusercontent.com/davidoesch/hiking_selector/refs/heads/main/result/2145_348.kml'&gt;Wanderung anzeigen&lt;/a&gt;</description>
             <styleUrl>#256</styleUrl>
             <ExtendedData>
                 <Data name="type">
@@ -330,7 +345,8 @@
             </LineString>
         </Placemark>
         <Placemark id="261">
-            <name>Länge:2.1km_Höhe:176m</name>
+            <name>Länge:2.1km Höhe:176m</name>
+            <description>&lt;a href='https://map.geo.admin.ch/#/map?layers=KML|https://raw.githubusercontent.com/davidoesch/hiking_selector/refs/heads/main/result/2145_348.kml'&gt;Wanderung anzeigen&lt;/a&gt;</description>
             <styleUrl>#262</styleUrl>
             <ExtendedData>
                 <Data name="type">
@@ -342,7 +358,8 @@
             </LineString>
         </Placemark>
         <Placemark id="267">
-            <name>Länge:2.3km_Höhe:176m</name>
+            <name>Länge:2.3km Höhe:176m</name>
+            <description>&lt;a href='https://map.geo.admin.ch/#/map?layers=KML|https://raw.githubusercontent.com/davidoesch/hiking_selector/refs/heads/main/result/2145_348.kml'&gt;Wanderung anzeigen&lt;/a&gt;</description>
             <styleUrl>#268</styleUrl>
             <ExtendedData>
                 <Data name="type">
@@ -354,7 +371,8 @@
             </LineString>
         </Placemark>
         <Placemark id="273">
-            <name>Länge:1.4km_Höhe:116m</name>
+            <name>Länge:1.4km Höhe:116m</name>
+            <description>&lt;a href='https://map.geo.admin.ch/#/map?layers=KML|https://raw.githubusercontent.com/davidoesch/hiking_selector/refs/heads/main/result/2145_348.kml'&gt;Wanderung anzeigen&lt;/a&gt;</description>
             <styleUrl>#274</styleUrl>
             <ExtendedData>
                 <Data name="type">
@@ -366,7 +384,8 @@
             </LineString>
         </Placemark>
         <Placemark id="279">
-            <name>Länge:1.4km_Höhe:138m</name>
+            <name>Länge:1.4km Höhe:138m</name>
+            <description>&lt;a href='https://map.geo.admin.ch/#/map?layers=KML|https://raw.githubusercontent.com/davidoesch/hiking_selector/refs/heads/main/result/2145_348.kml'&gt;Wanderung anzeigen&lt;/a&gt;</description>
             <styleUrl>#280</styleUrl>
             <ExtendedData>
                 <Data name="type">
@@ -378,7 +397,8 @@
             </LineString>
         </Placemark>
         <Placemark id="285">
-            <name>Länge:1.1km_Höhe:65m</name>
+            <name>Länge:1.1km Höhe:65m</name>
+            <description>&lt;a href='https://map.geo.admin.ch/#/map?layers=KML|https://raw.githubusercontent.com/davidoesch/hiking_selector/refs/heads/main/result/2145_348.kml'&gt;Wanderung anzeigen&lt;/a&gt;</description>
             <styleUrl>#286</styleUrl>
             <ExtendedData>
                 <Data name="type">
@@ -390,7 +410,8 @@
             </LineString>
         </Placemark>
         <Placemark id="291">
-            <name>Länge:1.4km_Höhe:96m</name>
+            <name>Länge:1.4km Höhe:96m</name>
+            <description>&lt;a href='https://map.geo.admin.ch/#/map?layers=KML|https://raw.githubusercontent.com/davidoesch/hiking_selector/refs/heads/main/result/2145_348.kml'&gt;Wanderung anzeigen&lt;/a&gt;</description>
             <styleUrl>#292</styleUrl>
             <ExtendedData>
                 <Data name="type">

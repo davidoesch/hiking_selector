@@ -16,14 +16,14 @@ from shapely.geometry import Point, Polygon
 #Configure
 extent = ([2698690,1111036],  [2706116,1116231])
 input_shapefile= os.path.join("input","dissolved_wanderwege.shp")
-output_shapefile = "r_w_dissolved.shp"
-parking_shapefile = "r_parking.shp"  # This should be the correct path to your parking data
 parking_buffer_meter = 500  # Use 500 meters for proximity check
 max_length_meter = 6000  # Define the maximum length in meters
 max_height_meter = 400
 output_directory = "result"
 
 # Step 0 CLIP SWISS HIKING TRAIL:
+output_shapefile = "r_w_dissolved.shp"
+parking_shapefile = "r_parking.shp"  # This should be the correct path to your parking data
 
 min_x, min_y = extent[0]
 max_x, max_y = extent[1]
@@ -466,6 +466,10 @@ for placemark_info in placemark_data:
 
     # Add extended data
     placemark.extendeddata.newdata(name="type", value="linepolygon")
+
+    # Add a link to the description field for each placemark
+    link = f"https://map.geo.admin.ch/#/map?layers=KML|https://raw.githubusercontent.com/davidoesch/hiking_selector/refs/heads/main/result/{filename}"
+    placemark.description = f"<a href='{link}'>Wanderung anzeigen</a>"
 
 # Save the combined KML file using the max height and max length in the filename
 kml_filename = f"{max_height_meter}_{max_length_meter}.kml"
