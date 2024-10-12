@@ -8,10 +8,12 @@ import simplekml
 import json
 import random
 import os
+import glob
 import subprocess
 import geopandas as gpd
 import pandas as pd
 from shapely.geometry import Point, Polygon
+import shutil
 
 #Configure
 extent = ([2698690,1111036],  [2706116,1116231])
@@ -20,6 +22,7 @@ parking_buffer_meter = 500  # Use 500 meters for proximity check
 max_length_meter = 6000  # Define the maximum length in meters
 max_height_meter = 400
 output_directory = "result"
+online_path = "https://raw.githubusercontent.com/davidoesch/hiking_selector/refs/heads/main/result/"
 
 # Step 0 CLIP SWISS HIKING TRAIL:
 output_shapefile = "r_w_dissolved.shp"
@@ -27,6 +30,27 @@ parking_shapefile = "r_parking.shp"  # This should be the correct path to your p
 
 min_x, min_y = extent[0]
 max_x, max_y = extent[1]
+
+def empty_directory(directory_path):
+    # Check if the directory exists
+    if os.path.exists(directory_path):
+        # Loop through all the files and subdirectories in the directory
+        for filename in os.listdir(directory_path):
+            file_path = os.path.join(directory_path, filename)
+            try:
+                # Remove files
+                if os.path.isfile(file_path) or os.path.islink(file_path):
+                    os.unlink(file_path)
+                # Remove directories
+                elif os.path.isdir(file_path):
+                    shutil.rmtree(file_path)
+            except Exception as e:
+                print(f'Error deleting {file_path}. Reason: {e}')
+    else:
+        print(f"Directory {directory_path} does not exist.")
+
+empty_directory(output_directory)
+
 
 # Create a temporary polygon shapefile for the clipping extent
 clip_shapefile = "clip_extent.shp"
@@ -110,6 +134,43 @@ if not gdf.empty:
         all_polygons.to_file(output_gpkg, driver='ESRI Shapefile')
 
         print(f"Conversion complete. All data is now stored as polygons in {output_gpkg}")
+
+        # Convert the CRS to WGS84 (EPSG:4326) for KML export
+        all_polygons_wgs84 = all_polygons.to_crs(epsg=4326)
+
+        # Write the result to a KML file
+        kml = simplekml.Kml()
+
+        for idx, row in all_polygons_wgs84.iterrows():
+            geom = row.geometry
+
+            # Check if the geometry is a Polygon or MultiPolygon
+            if geom.geom_type == 'Polygon':
+                coords = list(geom.exterior.coords)  # Get the coordinates of the polygon
+
+                # Create a polygon placemark in KML with the name "Parking" (will display on the map)
+                pol = kml.newpolygon(name="Parking", outerboundaryis=coords)
+                pol.style.polystyle.color = simplekml.Color.blue  # Set polygon color to blue
+                pol.style.polystyle.fill = 1  # Enable fill
+                pol.style.labelstyle.scale = 1.2  # Optional: Increase label size
+            elif geom.geom_type == 'MultiPolygon':
+                for polygon in geom:
+                    coords = list(polygon.exterior.coords)  # Get the coordinates of the polygon
+
+                    # Create a polygon placemark in KML with the name "Parking" (will display on the map)
+                    pol = kml.newpolygon(name="Parking", outerboundaryis=coords)
+                    pol.style.polystyle.color = simplekml.Color.blue  # Set polygon color to blue
+                    pol.style.polystyle.fill = 1  # Enable fill
+                    pol.style.labelstyle.scale = 1.2  # Optional: Increase label size
+
+        # Save the KML to the specified output directory
+        if not os.path.exists(output_directory):
+            os.makedirs(output_directory)
+
+        kml_path = os.path.join(output_directory, "parking.kml")
+        kml.save(kml_path)
+        print(f"KML saved to {kml_path}")
+
 
     convert_points_to_polygons_and_merge("parking_2056.gpkg", parking_shapefile)
 else:
@@ -422,17 +483,19 @@ for filename in os.listdir(output_directory):
             # Convert length to kilometers and round to one decimal place
             length_km = round(length / 1000, 1)
 
+            individual_kml_filename = f"{length}_{total_height}.kml"
             # Store placemark data
             placemark_data.append({
                 'name': f"Länge:{length_km}km Höhe:{total_height}m",
                 'coords': [(lon, lat, 0) for lat, lon in coords_wgs84],
                 'color': color,
-                'thickness': thickness
+                'thickness': thickness,
+                'description':individual_kml_filename
             })
 
             # Save each polygon as a separate KML file with {length}_{total_height}.kml
             individual_kml = simplekml.Kml()
-            individual_placemark = individual_kml.newlinestring(name=f"Länge:{length_km}km_Höhe:{total_height}m")
+            individual_placemark = individual_kml.newlinestring(name=f"Länge:{length_km}km Höhe:{total_height}m")
             individual_placemark.coords = [(lon, lat, 0) for lat, lon in coords_wgs84]
             individual_placemark.style.linestyle.color = color  # Set color
             individual_placemark.style.linestyle.width = thickness  # Set thickness
@@ -441,7 +504,7 @@ for filename in os.listdir(output_directory):
             individual_placemark.extendeddata.newdata(name="type", value="linepolygon")
 
             # Save the individual KML file
-            individual_kml_filename = f"{length}_{total_height}.kml"
+
             individual_kml_path = os.path.join(output_directory, individual_kml_filename)
             individual_kml.save(individual_kml_path)
 
@@ -457,6 +520,16 @@ kml = simplekml.Kml()
 # Set the KML document name to be {max_height_meter}_{max_length_meter}
 kml.document.name = f"{max_height_meter}_{max_length_meter}"
 
+def get_polygon_centroid(coords):
+    # Convert the list of coordinates into a Shapely polygon
+    polygon = Polygon(coords)
+
+    # Get the centroid of the polygon
+    centroid = polygon.centroid
+
+    # Return the centroid coordinates (longitude, latitude)
+    return centroid.x, centroid.y
+
 # Add sorted placemarks to the KML
 for placemark_info in placemark_data:
     placemark = kml.newlinestring(name=placemark_info['name'])
@@ -468,7 +541,10 @@ for placemark_info in placemark_data:
     placemark.extendeddata.newdata(name="type", value="linepolygon")
 
     # Add a link to the description field for each placemark
-    link = f"https://map.geo.admin.ch/#/map?layers=KML|https://raw.githubusercontent.com/davidoesch/hiking_selector/refs/heads/main/result/{filename}"
+
+    coords = placemark_info['coords']  # Your list of (lon, lat) coordinates
+    centroid_lon, centroid_lat = get_polygon_centroid(coords)
+    link = f"https://map.geo.admin.ch/#/map?swisssearch={centroid_lon},{centroid_lat}&z=7.5&layers=KML|{online_path}parking.kml;KML|{online_path}{placemark_info['description']}"
     placemark.description = f"<a href='{link}'>Wanderung anzeigen</a>"
 
 # Save the combined KML file using the max height and max length in the filename
@@ -478,11 +554,19 @@ kml.save(kml_path)
 
 print(f"Step 5 complete: All GeoPackage files converted to {kml_filename} with the specified structure and sorted placemarks.")
 
+#cleanup
+# List of specific files to delete
 files_to_delete = ["parking__merged_2056.gpkg", "parking_2056.gpkg", "parking.gpkg"]
+
+# Add all .gpkg files in the output_directory to the list
+files_to_delete.extend(glob.glob(os.path.join(output_directory, "*.gpkg")))
+
 # Loop through the list and delete each file
 for file in files_to_delete:
     try:
         os.remove(file)
         print(f"Deleted: {file}")
-    except:
+    except FileNotFoundError:
         print(f"File not found: {file}")
+    except Exception as e:
+        print(f"Error deleting {file}: {e}")
